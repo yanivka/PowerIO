@@ -19,5 +19,5 @@ jobs:
       - name: Cache
         uses: actions/cache@v2.1.4
         with:
-          path: /build
-          key: testing-key
+          path: .
+          key: build-${GITHUB_REF##*/}
