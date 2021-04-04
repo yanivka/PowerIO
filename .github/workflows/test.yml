@@ -13,3 +13,5 @@ jobs:
         with:
           path: .
           key: build-${{ github.ref }}
+      - name: test
+        run: ls -al .
