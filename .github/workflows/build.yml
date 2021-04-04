@@ -1,0 +1,23 @@
+name: Build
+on:
+  push:
+    branches: [ experimental , main , dev] 
+  pull_request:
+    branches: [ experimental , main , dev]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+      - name: Setup solution packages
+        run: dotnet restore
+      - name: Build Solution
+        run: dotnet build -p:Configuration=Debug;Platform=x86
+      - name: Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: .
+          key: build-${{ github.ref }}
