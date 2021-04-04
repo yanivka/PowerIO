@@ -10,8 +10,9 @@ namespace PowerIO.Tests
         [Test]
         public void FirstTest()
         {
+            
 
-            Console.WriteLine("yes");
+            Console.WriteLine("Can you see the current string");
             Assert.Pass("Passed first test successfully.");
         }
     }
