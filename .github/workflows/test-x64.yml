@@ -22,4 +22,4 @@ jobs:
       - name: Setup solution packages
         run: dotnet restore
       - name: Run Tests
-        run: dotnet test -v n -p:Configuration=Debug|x64;Platform=x64
+        run: dotnet test -v n "-p:Configuration=Debug|x64;Platform=x64"
