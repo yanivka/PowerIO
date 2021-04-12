@@ -22,5 +22,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: TestSuite-Experimental-NetCore2.1-x64
-          path: ./PowerIO.Tests/bin/Debug/netcoreapp2.1/TestSuite-Experimental-NetCore2.1-x64.tar.gz
+          path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
 
