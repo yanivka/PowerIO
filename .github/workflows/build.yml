@@ -1,9 +1,9 @@
-name: Build
+name: Build Experimental NetCore2.1 x64
 on:
   push:
-    branches: [ experimental , main , dev] 
+    branches: [ experimental ] 
   pull_request:
-    branches: [ experimental , main , dev]
+    branches: [ experimental ]
   workflow_dispatch:
 jobs:
   build:
@@ -16,15 +16,11 @@ jobs:
         run: dotnet restore
       - name: Build Solution
         run: dotnet build -p:Configuration=Debug;Platform=x64
-      - name: Creating Test Suite Env
-        run: mkdir ./TestSuite
-      - name: Copying Test Suite
-        run: cp -R ./PowerIO.Tests/bin/Debug/netcoreapp2.1 ./TestSuite
       - name: Pack Test Suite
-        run: tar -czvf ./TestSuite-${{github.ref}}.tar.gz ./TestSuite
+        run: tar -czvf ./TestSuite-Experimental.tar.gz ./PowerIO.Tests/bin/Debug/netcoreapp2.1
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: TestSuite-${{github.ref}}
-          path: ./PowerIO.Tests/bin/Debug/TestSuite-${{github.ref}}.tar.gz
+          path: ./PowerIO.Tests/bin/Debug/TestSuite-Experimental.tar.gz
 
