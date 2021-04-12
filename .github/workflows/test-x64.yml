@@ -22,6 +22,6 @@ jobs:
       - name: Setup solution packages
         run: dotnet restore
       - name: Build Solution
-        run: dotnet build -p:Configuration=Debug;Platform=x64
+        run: dotnet build "-p:Configuration=Debug|x64"
       - name: Run Tests
         run: dotnet vstest ./PowerIO.Tests/bin/Debug/netcoreapp2.1/PowerIO.Tests.dll
