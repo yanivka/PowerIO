@@ -12,6 +12,8 @@ namespace PowerIO.Tests
         {
             
 
+
+
             Console.WriteLine("Can you see the current string");
             Assert.Pass("Passed first test successfully.");
         }
