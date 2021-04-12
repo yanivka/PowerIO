@@ -20,4 +20,4 @@ jobs:
         uses: actions/cache@v2.1.4
         with:
           path: .
-          key: build-${{ github.ref }}
+          key: build-${{ github.ref }}-${{ github.sha }}
