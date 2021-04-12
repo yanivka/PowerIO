@@ -16,6 +16,8 @@ jobs:
         run: dotnet restore
       - name: Build Solution
         run: dotnet build -p:Configuration=Debug;Platform=x64
+      - name: Test location
+        run: ls -alR
       - name: Pack Test Suite
         run: tar -czvf ./PowerIO.Tests/bin/x64/Debug/TestSuite-${{github.ref}}.tar.gz ./PowerIO.Tests/bin/x64/Debug/netcoreapp2.1
       - name: Upload
