@@ -18,4 +18,4 @@ jobs:
       - name: Unpack TestSuite
         run: tar -xzvf TestSuite-Experimental-NetCore2.1-x64.tar.gz/TestSuite-Experimental-NetCore2.1-x64.tar.gz
       - name: Run Tests
-        run: dotnet test -v n
+        run: dotnet test -v n -p:Configuration=Debug;Platform=x64
