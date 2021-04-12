@@ -1,4 +1,4 @@
-name: Test
+name: Test Experimental NetCore2.1 x64 
 on:
   workflow_run:
     workflows: ["Build"]
@@ -8,8 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Cache
-        uses: actions/cache@v2.1.4
+      - name: Downloading TestSuite  
+        uses: actions/download-artifact@v2
         with:
-          path: .
-          key: build-${{ github.ref }}
+          name: TestSuite-Experimental-NetCore2.1-x64
+          path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
+      - name: Unpack TestSuite
+        run: tar -xzvf TestSuite-Experimental-NetCore2.1-x64.tar.gz
+      - name: Run Tests
+        run: dotnet test PowerIO.Tests.dll -v n
