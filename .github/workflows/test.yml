@@ -4,6 +4,7 @@ on:
     workflows: ["Build-Experimental-NetCore2.1-x64"]
     types:
       - completed
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
