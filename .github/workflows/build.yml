@@ -18,9 +18,11 @@ jobs:
         run: dotnet build -p:Configuration=Debug;Platform=x64
       - name: Pack Test Suite
         run: tar -czvf ../TestSuite-Experimental-NetCore2.1-x64.tar.gz .
+      - name: Prepare For Upload
+        run: cp ../TestSuite-Experimental-NetCore2.1-x64.tar.gz ./TestSuite-Experimental-NetCore2.1-x64.tar.gz
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: TestSuite-Experimental-NetCore2.1-x64
-          path: ../TestSuite-Experimental-NetCore2.1-x64.tar.gz
+          path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
 
