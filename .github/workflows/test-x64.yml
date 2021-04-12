@@ -17,5 +17,9 @@ jobs:
           path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
       - name: Unpack TestSuite
         run: tar -xzvf TestSuite-Experimental-NetCore2.1-x64.tar.gz/TestSuite-Experimental-NetCore2.1-x64.tar.gz
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+      - name: Setup solution packages
+        run: dotnet restore
       - name: Run Tests
         run: dotnet test -v n -p:Configuration=Debug;Platform=x64
