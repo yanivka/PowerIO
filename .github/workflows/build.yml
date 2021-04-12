@@ -19,10 +19,10 @@ jobs:
       - name: Test location
         run: ls -alR
       - name: Pack Test Suite
-        run: tar -czvf ./PowerIO.Tests/bin/x64/Debug/TestSuite-${{github.ref}}.tar.gz ./PowerIO.Tests/bin/x64/Debug/netcoreapp2.1
+        run: tar -czvf ./PowerIO.Tests/bin/Debug/TestSuite-${{github.ref}}.tar.gz ./PowerIO.Tests/bin/x64/Debug/netcoreapp2.1
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: TestSuite-${{github.ref}}
-          path: ./PowerIO.Tests/bin/x64/Debug/TestSuite-${{github.ref}}.tar.gz
+          path: ./PowerIO.Tests/bin/Debug/TestSuite-${{github.ref}}.tar.gz
 
