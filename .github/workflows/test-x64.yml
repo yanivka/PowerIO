@@ -16,6 +16,6 @@ jobs:
           name: TestSuite-Experimental-NetCore2.1-x64
           path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
       - name: Unpack TestSuite
-        run: tar -xzvf TestSuite-Experimental-NetCore2.1-x64.tar.gz
+        run: tar -xzvf TestSuite-Experimental-NetCore2.1-x64.tar.gz/TestSuite-Experimental-NetCore2.1-x64.tar.gz
       - name: Run Tests
         run: dotnet test PowerIO.Tests.dll -v n
