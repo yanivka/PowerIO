@@ -16,10 +16,12 @@ jobs:
         run: dotnet restore
       - name: Build Solution
         run: dotnet build -p:Configuration=Debug;Platform=x64
-      - name: Test location
-        run: ls -alR
+      - name: Creating Test Suite Env
+        run: mkdir ./TestSuite
+      - name: Copying Test Suite
+        run: cp -R ./PowerIO.Tests/bin/Debug/netcoreapp2.1 ./TestSuite
       - name: Pack Test Suite
-        run: tar -czvf ./PowerIO.Tests/bin/Debug/TestSuite-${{github.ref}}.tar.gz ./PowerIO.Tests/bin/Debug/netcoreapp2.1
+        run: tar -czvf ./TestSuite-${{github.ref}}.tar.gz ./TestSuite
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
