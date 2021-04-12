@@ -17,10 +17,10 @@ jobs:
       - name: Build Solution
         run: dotnet build -p:Configuration=Debug;Platform=x64
       - name: Pack Test Suite
-        run: tar -czvf --exclude=TestSuite-Experimental-NetCore2.1-x64.tar.gz TestSuite-Experimental-NetCore2.1-x64.tar.gz .
+        run: tar -czvf ../TestSuite-Experimental-NetCore2.1-x64.tar.gz .
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: TestSuite-Experimental-NetCore2.1-x64
-          path: TestSuite-Experimental-NetCore2.1-x64.tar.gz
+          path: ../TestSuite-Experimental-NetCore2.1-x64.tar.gz
 
