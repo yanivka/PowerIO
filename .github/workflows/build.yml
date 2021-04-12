@@ -1,4 +1,4 @@
-name: Build Experimental NetCore2.1 x64
+name: Build-Experimental-NetCore2.1-x64
 on:
   push:
     branches: [ experimental ] 
