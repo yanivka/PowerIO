@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Downloading TestSuite  
         uses: dawidd6/action-download-artifact@v2.13.0
@@ -21,5 +21,7 @@ jobs:
         uses: actions/setup-dotnet@v1.7.2
       - name: Setup solution packages
         run: dotnet restore
+      - name: Build Solution
+        run: dotnet build -c:Debug /p:Platform:x64
       - name: Run Tests
         run: dotnet vstest ./PowerIO.Tests/bin/Debug/netcoreapp2.1/PowerIO.Tests.dll
